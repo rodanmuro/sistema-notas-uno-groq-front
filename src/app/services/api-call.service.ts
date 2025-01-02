@@ -24,6 +24,10 @@ export class ApiCallService {
   }
 
   apiGetProfesores():Observable<Usuario[]>{
-    return this.http.get<Usuario[]>(this.URL_BASE+"/usuario/profesor")
+    return this.http.get<Usuario[]>(this.URL_BASE+"/usuario/profesor");
+  }
+
+  apiGetEstudiantes():Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.URL_BASE+"/usuario/estudiante");
   }
 }

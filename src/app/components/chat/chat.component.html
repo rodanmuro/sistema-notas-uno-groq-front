@@ -64,9 +64,9 @@
                     </th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let fila of asignaturas">
-                        <td>{{fila.id}}</td>
-                        <td>{{fila.asignatura}}</td>
+                    <tr *ngFor="let asignatura of asignaturas">
+                        <td>{{asignatura.id}}</td>
+                        <td>{{asignatura.asignatura}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -89,11 +89,38 @@
                     </th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let fila of profesores">
-                        <td>{{fila.id}}</td>
-                        <td>{{fila.nombres}}</td>
-                        <td>{{fila.apellidos}}</td>
-                        <td>{{fila.correo}}</td>
+                    <tr *ngFor="let profesor of profesores">
+                        <td>{{profesor.id}}</td>
+                        <td>{{profesor.nombres}}</td>
+                        <td>{{profesor.apellidos}}</td>
+                        <td>{{profesor.correo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div *ngIf="selectedTable === 'estudiantes'" >
+            <table>
+                <thead>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Nombres
+                    </th>
+                    <th>
+                        Apellidos
+                    </th>
+                    <th>
+                        Correo
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let estudiante of estudiantes">
+                        <td>{{estudiante.id}}</td>
+                        <td>{{estudiante.nombres}}</td>
+                        <td>{{estudiante.apellidos}}</td>
+                        <td>{{estudiante.correo}}</td>
                     </tr>
                 </tbody>
             </table>

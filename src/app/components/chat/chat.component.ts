@@ -22,6 +22,7 @@ export class ChatComponent {
 
   asignaturas: Asignatura[] = [];
   profesores: Usuario[] = [];
+  estudiantes: Usuario[] = [];
   
   selectedTable = "asignatura";
 
@@ -75,6 +76,16 @@ export class ChatComponent {
     )
   }
 
+  getEstudiantes(){
+    this.apiCallService.apiGetEstudiantes().subscribe(
+      {
+        next:(response) => {
+          this.estudiantes = response;
+        }
+      }
+    )
+  }
+
   onTableChange(event:Event){
     const selectElement = event.target as HTMLSelectElement;
     this.selectedTable = selectElement.value;
@@ -88,6 +99,9 @@ export class ChatComponent {
     }
     if(table==='profesores'){
       this.getProfesores();
+    }
+    if(table==='estudiantes'){
+      this.getEstudiantes();
     }
   }
 
