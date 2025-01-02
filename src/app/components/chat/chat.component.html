@@ -1,0 +1,105 @@
+<div class="contenedor">
+
+    <div class="contenedor-chat">
+
+        <div class="area-mensajes">
+
+            <div class="mensaje-usuario" *ngFor="let mensaje of mensajes">
+                {{mensaje}}
+            </div>
+
+        </div>
+
+        <div class="area-chat">
+            <textarea name="mensaje" id="mensaje" [(ngModel)]="mensaje" (keydown.enter)="agregarMensaje(mensaje)">
+            </textarea>
+        </div>
+
+        <div class="area-enviar">
+            <button class="enviar-mensaje" (click)="agregarMensaje(mensaje)">Enviar</button>
+        </div>
+
+    </div>
+
+    <div class="contenedor-informe">
+        Contenedor informe
+
+        <div>
+            <table>
+                <thead>
+                    <th *ngFor="let header of getHeaders(informe)">
+                        {{header}}
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fila of informe">
+                        <td *ngFor="let key of objectKeys(fila)">
+                            {{fila[key]}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+    </div>
+
+    <div class="contenedor-tablas">
+        Contenedor tablas
+        <select name="tablas" id="tablas" [(ngModel)]="selectedTable" (change)="onTableChange($event)">
+            <option value="asignaturas">Asignatura</option>
+            <option value="profesores">Profesores</option>
+            <option value="estudiantes">Estudiantes</option>
+        </select>
+
+        <div *ngIf="selectedTable === 'asignaturas'" >
+            <table>
+                <thead>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Asignatura
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fila of asignaturas">
+                        <td>{{fila.id}}</td>
+                        <td>{{fila.asignatura}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div *ngIf="selectedTable === 'profesores'" >
+            <table>
+                <thead>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Nombres
+                    </th>
+                    <th>
+                        Apellidos
+                    </th>
+                    <th>
+                        Correo
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fila of profesores">
+                        <td>{{fila.id}}</td>
+                        <td>{{fila.nombres}}</td>
+                        <td>{{fila.apellidos}}</td>
+                        <td>{{fila.correo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+    </div>
+
+</div>

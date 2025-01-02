@@ -1,0 +1,38 @@
+.contenedor{
+    display: flex;
+    padding: 10px;
+}
+
+.contenedor-chat{
+    width: 20%;
+    margin: 10px;
+}
+
+.contenedor-informe{
+    width: 50%;
+    margin: 10px;
+}
+
+.contenedor-tablas{
+    width: 50%;
+    margin: 10px;
+}
+
+.area-mensajes, .area-chat, .area-enviar{
+    margin: 5px;
+    border: 1px solid lightgray;
+}
+
+.area-enviar{
+    text-align: end;
+}
+
+.area-chat textarea{
+    width: 90%;
+}
+
+.mensaje-usuario{
+    background-color: lightblue;
+    margin: 5px;
+    border-radius: 5px;
+}
