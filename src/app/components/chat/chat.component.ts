@@ -24,7 +24,7 @@ export class ChatComponent {
   profesores: Usuario[] = [];
   estudiantes: Usuario[] = [];
   
-  selectedTable = "asignatura";
+  selectedTable = "tablas";
 
   constructor(private  apiCallService:ApiCallService){
     this.getAsignaturas();

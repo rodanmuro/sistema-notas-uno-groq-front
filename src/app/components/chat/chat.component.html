@@ -48,6 +48,7 @@
     <div class="contenedor-tablas">
         Contenedor tablas
         <select name="tablas" id="tablas" [(ngModel)]="selectedTable" (change)="onTableChange($event)">
+            <option value="tablas">Tablas</option>
             <option value="asignaturas">Asignatura</option>
             <option value="profesores">Profesores</option>
             <option value="estudiantes">Estudiantes</option>
